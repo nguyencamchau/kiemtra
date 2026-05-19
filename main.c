@@ -6,17 +6,35 @@ nhập vào dãy số thực, xuất dãy số, đếm dãy số có bao nhiêu 
 
 // Hàm nhập dãy số thực
 void nhap(float a[], int *n) {
+    printf("Nhap so luong phan tu n: ");
+    scanf("%d", n);
+    for (int i = 0; i < *n; i++) {
+        printf("Nhap a[%d]: ", i);
+        scanf("%f", &a[i]);
+    }
 }
 
 // Hàm xuất dãy số thực
 void xuat(float a[], int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%.3f ", a[i]);
+    }
+    printf("\n");
 }
 
 // Hàm đếm phần tử có phần nguyên dương và chia hết cho 3
 int dem(float a[], int n) {
+    int count = 0;
+    for (int i = 0; i < n; i++) {
+        int phan_nguyen = (int)a[i]; 
+        if (phan_nguyen > 0 && phan_nguyen % 3 == 0) {
+            count++;
+        }
+    }
+ return count;
 }
 
-// Hàm main chỉ gọi các hàm
+// Hàm main chỉ gọi các hàm 
 int main() {
     float a[100];
     int n;
